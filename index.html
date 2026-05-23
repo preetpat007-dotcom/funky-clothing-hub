@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funky Clothing Hub - Find Your Style</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing" class="landing-page">
+        <div class="stars"></div>
+        <div class="animated-background"></div>
+        
+        <div class="landing-content">
+            <div class="logo-container">
+                <h1 class="main-title">✨ Funky Clothing Hub ✨</h1>
+                <p class="subtitle">Discover Your Vibe, Find Your Style!</p>
+            </div>
+            
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            
+            <button id="startBtn" class="start-button">
+                <span>Start Exploring</span>
+                <div class="button-glow"></div>
+            </button>
+            
+            <p class="cta-text">Let's find clothes that match your personality! 👕✨</p>
+        </div>
+    </div>
+
+    <!-- Preference Quiz -->
+    <div id="quiz" class="quiz-container" style="display: none;">
+        <div class="quiz-background"></div>
+        
+        <div class="quiz-content">
+            <button id="backBtn" class="back-button">← Back</button>
+            
+            <div class="quiz-header">
+                <h2>What's Your Style Vibe? 🎨</h2>
+                <p>Choose what excites you!</p>
+            </div>
+            
+            <div class="preferences-grid">
+                <!-- Style Preference -->
+                <div class="preference-section">
+                    <h3>Your Style:</h3>
+                    <div class="preference-buttons">
+                        <button class="pref-btn" data-type="style" data-value="casual">
+                            <span class="emoji">😎</span>
+                            <span>Casual</span>
+                        </button>
+                        <button class="pref-btn" data-type="style" data-value="formal">
+                            <span class="emoji">🎩</span>
+                            <span>Formal</span>
+                        </button>
+                        <button class="pref-btn" data-type="style" data-value="sporty">
+                            <span class="emoji">🏃</span>
+                            <span>Sporty</span>
+                        </button>
+                        <button class="pref-btn" data-type="style" data-value="vintage">
+                            <span class="emoji">🕰️</span>
+                            <span>Vintage</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Color Preference -->
+                <div class="preference-section">
+                    <h3>Your Color:</h3>
+                    <div class="preference-buttons">
+                        <button class="pref-btn" data-type="color" data-value="pastel" style="background: linear-gradient(135deg, #FFB3D9, #FFD6E8);">
+                            <span class="emoji">🌸</span>
+                            <span>Pastel</span>
+                        </button>
+                        <button class="pref-btn" data-type="color" data-value="vibrant" style="background: linear-gradient(135deg, #FF6B9D, #FFA500);">
+                            <span class="emoji">🌈</span>
+                            <span>Vibrant</span>
+                        </button>
+                        <button class="pref-btn" data-type="color" data-value="neutral" style="background: linear-gradient(135deg, #C0C0C0, #808080);">
+                            <span class="emoji">⚪</span>
+                            <span>Neutral</span>
+                        </button>
+                        <button class="pref-btn" data-type="color" data-value="dark" style="background: linear-gradient(135deg, #1a1a1a, #404040);">
+                            <span class="emoji">🖤</span>
+                            <span>Dark</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Vibe Preference -->
+                <div class="preference-section">
+                    <h3>Your Vibe:</h3>
+                    <div class="preference-buttons">
+                        <button class="pref-btn" data-type="vibe" data-value="minimalist">
+                            <span class="emoji">✨</span>
+                            <span>Minimalist</span>
+                        </button>
+                        <button class="pref-btn" data-type="vibe" data-value="bold">
+                            <span class="emoji">💥</span>
+                            <span>Bold</span>
+                        </button>
+                        <button class="pref-btn" data-type="vibe" data-value="artistic">
+                            <span class="emoji">🎨</span>
+                            <span>Artistic</span>
+                        </button>
+                        <button class="pref-btn" data-type="vibe" data-value="cozy">
+                            <span class="emoji">🤗</span>
+                            <span>Cozy</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="showProductsBtn" class="show-products-button" disabled>
+                Show Me Products! ✨
+            </button>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div id="products" class="products-container" style="display: none;">
+        <div class="products-header">
+            <button id="backToQuizBtn" class="back-button">← Back to Quiz</button>
+            <h2>Your Perfect Matches 👕</h2>
+            <p id="matchMessage" class="match-message"></p>
+        </div>
+        
+        <div id="productsGrid" class="products-grid"></div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription" class="modal-description"></p>
+                    <div class="modal-info">
+                        <span id="modalPrice" class="price"></span>
+                        <span id="modalSize" class="size"></span>
+                    </div>
+                    <p id="modalTags" class="tags"></p>
+                    <button class="add-to-cart-btn">Add to Favorites ❤️</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
